@@ -25,6 +25,9 @@ body {
     padding: 0 10px;
     margin: auto;
 }
+/*
+Inicio Menu
+*/
 .navbar .logo a{
     color: var(--active-color);
     font-size: 35px;
@@ -58,6 +61,8 @@ body {
     font-weight: 400px;
     margin-left: 25px;
 }
+
+
 .menu-btn{
     color: var(--site-color);
     font-size: 23px;
@@ -97,6 +102,16 @@ body {
         font-size: 25px;
     }
 }
+/*
+Fim Menu 
+*/
+
+
+/*
+Inicio do topo
+*/
+
+
 section{
     padding: 50px 0;
 }
@@ -112,8 +127,15 @@ section{
    /* background: url(../images/banner_top_v5.jpg) no-repeat center;*/
    background: linear-gradient(to right, var(--main-color) 25%, rgba(255,255,255,0)),
    url(../images/banner_top_v5.jpg) no-repeat center;;
-   height: 100vh;
+      height: 100vh;
    min-height: 500px;
+   /* 
+   background-size especifica o tamanho das imagens de fundo
+   */
+   background-size: cover;
+   /* 
+   background-attachment: fixed Fixa a immagem de fundo na tela
+   */
    background-attachment: fixed;
    font-family:   'Ubuntu', sans-serif;
 
@@ -156,6 +178,14 @@ section{
     background: none; 
  }
 
+ /*
+Fim do topo
+*/
+
+
+ /*
+Inicio Serviço 
+*/
 .services {
     color: var(--site-color);
     background-color: var(--main-color);
@@ -187,6 +217,10 @@ section{
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
+/*
+Altera a cor de fundo do cartão
+*/
 .services .serv-content .card:hover{
     background: var(--active-color);
 }
@@ -202,12 +236,144 @@ section{
 .services .serv-content .card .box {
     transition: all 0.3s ease;
 }
-
+/*
 .services .serv-content .card:hover .box{
-    transform: scale(1.05);
+    Ao passar o mause no box ele aumenta um pouco.
+*/
+.services .serv-content .card:hover .box{
+    transform: scale(1.15);
 }
 .services .serv-content .card .text {
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
+
+@media (max-width: 947px) {
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 690px) {
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+ /*
+Fim Serviço
+*/
+
+/*
+Iniício do serviço premium
+*/
+
+/*Estilizando cor da letra, fundo e fonte da seção Premium*/
+.premium{
+    color: var(--site-color);
+    background-color: var(--first-color);
+    font-family: 'Poppins',sans-serif;
+}
+
+/*No titulo vamos alinhar e definir a magem, espessura da fonte e tamanho*/
+.premium .title{
+    text-align: center;
+    margin: 50px 0px;
+    font-weight: 400;
+    font-size: 35px;    
+}
+
+/*No conteudo Premium colocar tudo na mesma linha com display Flex e usar flex-wrap
+para quebrar em varias linhas, alinhar os itens e justificar  */
+.premium .premium-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+/*
+Nesta parte vamos dividir a tela 45% para left e 55 para right
+*/
+.premium .premium-content .left{
+    width: 45%;
+}
+/*
+Vamos setar o tamanho da imagem para 400px e  object-fit: cover
+define como o conteúdo de um elemento substituído, como <img> ou <video>
+deve ser redimensionado para caber em seu contêiner.
+E foi adicionado uma borda de 6px
+*/
+.premium .premium-content .left img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/*
+Nesta parte vamos dividir a tela 45% para left e 55 para right
+*/
+.premium .premium-content .right{
+    width: 55%;
+}
+/*
+Aqui definimos otamanho do texto e espaçamento da fonte e margem de 10px
+*/
+.premium .premium-content .right .text{
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+/*
+Aqui justificamos o texto 
+*/
+.premium .premium-content .right p{
+    text-align: justify;
+}
+
+/*
+Aqui definimos varias propriedados de botão contato.
+*/
+.premium .premium-content .right a{
+    display: inline-block;
+    background: var(--active-color);
+    color: var(--site-color);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--active-color);
+    transition: all 0.3s ease;
+}
+/*
+Aqui mudamos a cor do botão contato e ao passar o mause tiramos tambpem o fundo.
+*/
+.premium .premium-content .right a:hover{
+    color: var(--active-color);
+    background: none;
+}
+
+@media (max-width:1104px){
+    .premium .premium-content .left img{
+        width: 350px;
+        height: 350px;
+    }
+}
+@media (max-width: 947px){
+    .premium .premium-content .column{
+        width: 100%;
+    }
+    .premium .premium-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .premium .premium-content .right{
+        flex: 100%;
+    }
+}
+/*
+Fim do serviço premium
+*/
